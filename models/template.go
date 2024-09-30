@@ -12,6 +12,7 @@ import (
 // Template models hold the attributes for an email template to be sent to targets
 type Template struct {
 	Id             int64        `json:"id" gorm:"column:id; primary_key:yes"`
+	OrgId		   string       `json:"org_id" sql:"not null"`
 	UserId         int64        `json:"-" gorm:"column:user_id"`
 	Name           string       `json:"name"`
 	EnvelopeSender string       `json:"envelope_sender"`

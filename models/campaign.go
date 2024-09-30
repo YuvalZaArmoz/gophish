@@ -15,6 +15,7 @@ import (
 type Campaign struct {
 	Id            int64     `json:"id"`
 	UserId        int64     `json:"-"`
+	OrgId		  string    `json:"org_id" sql:"not null"`
 	Name          string    `json:"name" sql:"not null"`
 	CreatedDate   time.Time `json:"created_date"`
 	LaunchDate    time.Time `json:"launch_date"`
@@ -31,6 +32,7 @@ type Campaign struct {
 	SMTPId        int64     `json:"-"`
 	SMTP          SMTP      `json:"smtp"`
 	URL           string    `json:"url"`
+	Metadata 	  string    `json:"metadata"`
 }
 
 // CampaignResults is a struct representing the results from a campaign
